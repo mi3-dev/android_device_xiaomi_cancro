@@ -1,0 +1,39 @@
+#
+# system.prop for cancro
+#
+rild.libpath=/vendor/lib/libril-qc-qmi-1.so
+rild.libargs=-d /dev/smd0
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+persist.sys.ssr.restart_level=3
+persist.radio.ramdump_sdcard=1
+ril.subscription.types=RUIM
+DEVICE_PROVISIONED=1
+# Start in global mode
+ro.telephony.default_network=7
+
+debug.sf.hw=1
+debug.egl.hw=1
+debug.composition.type=c2d
+persist.hwc.mdpcomp.enable=true
+debug.mdpcomp.logs=0
+dalvik.vm.heapsize=36m
+dev.pm.dyn_samplingrate=1
+persist.demo.hdmirotationlock=false
+
+ro.sf.lcd_density=480
+
+ro.hdmi.enable=true
+tunnel.decode=true
+tunnel.audiovideo.decode=true
+lpa.decode=false
+lpa.use-stagefright=true
+persist.speaker.prot.enable=true
+qcom.hw.aac.encoder=true
