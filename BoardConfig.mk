@@ -37,7 +37,6 @@ TARGET_PREBUILT_KERNEL := $(COMMON_PATH)/kernel
 # Recovery
 TARGET_RECOVERY_FSTAB            := $(COMMON_PATH)/rootdir/ramdisk/fstab.qcom
 RECOVERY_FSTAB_VERSION           := 2
-USE_CHINESE_RECOVERY := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 BOARD_NATIVE_DUALBOOT := true
 BOARD_NATIVE_DUALBOOT_SINGLEDATA := true
@@ -45,7 +44,7 @@ TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness
 
 USE_CHINESE_RECOVERY := true
 ifneq ($(USE_CHINESE_RECOVERY),true)
-BOARD_USE_CUSTOM_RECOVERY_FONT   := \"roboto_15x24.h\"
+BOARD_USE_CUSTOM_RECOVERY_FONT   := \"roboto_23x41.h\"
 BOARD_CUSTOM_RECOVERY_UI         := \
 	../../$(COMMON_PATH)/recovery/dualboot.c \
 	../../$(COMMON_PATH)/recovery/recovery_ui.c
