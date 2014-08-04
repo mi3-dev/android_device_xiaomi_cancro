@@ -1,0 +1,1 @@
+genfscon proc /sysrq-trigger u:object_r:sysrq_trigger_proc:s0

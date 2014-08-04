@@ -1,0 +1,8 @@
+allow vold qseecom_device:chr_file rw_file_perms;
+allow vold kernel:system module_request;
+allow vold self:capability2 block_suspend;
+allow vold fscklogs:file { write create open getattr };
+allow vold sysrq_trigger_proc:file rw_file_perms;
+allow vold self:capability sys_boot;
+allow vold cache_file:dir { write add_name };
+allow vold cache_file:file { write create open };

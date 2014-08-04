@@ -4,6 +4,9 @@ BOARD_VENDOR := xiaomi
 
 COMMON_PATH := device/xiaomi/cancro
 
+# Include path
+TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
+
 # inherit from the proprietary version
 -include vendor/xiaomi/cancro/BoardConfigVendor.mk
 
@@ -11,6 +14,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE  := true
 
 TARGET_BOARD_PLATFORM := msm8974
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno330
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
 
 # Architecture
@@ -31,10 +35,118 @@ BOARD_KERNEL_PAGESIZE    := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET     := 0x02000000
 
+# Flags
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
+COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
+
+# QCOM hardware
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_USES_QCOM_BSP := true
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+TARGET_QCOM_AUDIO_VARIANT := caf
+TARGET_QCOM_DISPLAY_VARIANT := caf-new
+TARGET_QCOM_MEDIA_VARIANT := caf-new
+
+# Audio
+BOARD_USES_ALSA_AUDIO := true
+AUDIO_FEATURE_DISABLED_FM := true
+AUDIO_FEATURE_ENABLED_MULTIPLE_TUNNEL := true
+BOARD_USE_RESAMPLER_IN_PCM_OFFLOAD_PATH := true
+
+# Bluetooth
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_QCOM := true
+
+# SELinux
+BOARD_SEPOLICY_DIRS += \
+   $(COMMON_PATH)/sepolicy
+
+# The list below is order dependent
+BOARD_SEPOLICY_UNION += \
+    file.te \
+    device.te \
+    app.te \
+    cne.te \
+    qmux.te \
+    mpdecision.te \
+    thermald.te \
+    ueventd.te \
+    vold.te \
+    file_contexts \
+    genfs_contexts \
+    te_macros
+
+PRODUCT_BOOT_JARS := $(subst $(space),:,$(PRODUCT_BOOT_JARS))
+
+# Graphics
+BOARD_EGL_CFG := $(COMMON_PATH)/configs/egl.cfg
+USE_OPENGL_RENDERER := true
+TARGET_USES_C2D_COMPOSITION := true
+TARGET_USES_ION := true
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+HAVE_ADRENO_SOURCE:= false
+VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
+SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
+
+
+# Shader cache config options
+# Maximum size of the  GLES Shaders that can be cached for reuse.
+# Increase the size if shaders of size greater than 12KB are used.
+MAX_EGL_CACHE_KEY_SIZE := 12*1024
+
+# Maximum GLES shader cache size for each app to store the compiled shader
+# binaries. Decrease the size if RAM or Flash Storage size is a limitation
+# of the device.
+MAX_EGL_CACHE_SIZE := 2048*1024
+
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
+
+# Wifi
+BOARD_HAS_QCOM_WLAN              := true
+BOARD_HAS_QCOM_WLAN_SDK          := true
+BOARD_WLAN_DEVICE                := qcwcn
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
+BOARD_HOSTAPD_DRIVER             := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_qcwcn
+WIFI_DRIVER_FW_PATH_STA          := "sta"
+WIFI_DRIVER_FW_PATH_AP           := "ap"
+TARGET_USES_WCNSS_CTRL           := true
+TARGET_USES_QCOM_WCNSS_QMI       := true
+TARGET_USES_WCNSS_MAC_ADDR_REV   := true
+
+
+# No old RPC for prop
+TARGET_NO_RPC := true
+
+# GPS HAL lives here
+TARGET_GPS_HAL_PATH := $(COMMON_PATH)/gps
+TARGET_PROVIDES_GPS_LOC_API := true
+
+# Use HW crypto for ODE
+TARGET_HW_DISK_ENCRYPTION := true
+
+# Enable CNE
+#BOARD_USES_QCNE := true
+
+# Added to indicate that protobuf-c is supported in this build
+PROTOBUF_SUPPORTED := true
+
+# Enable CPU boosting events in the power HAL
+TARGET_USES_CPU_BOOST_HINT := true
+
+# ANT+
+BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
+
 # fix this up by examining /proc/mtd on a running device
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x105c0000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x105c0000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x105c0000
+TARGET_USERIMAGES_USE_EXT4         := true
+BOARD_BOOTIMAGE_PARTITION_SIZE     := 16777216
+BOARD_CACHEIMAGE_PARTITION_SIZE    := 536870912
+BOARD_PERSISTIMAGE_PARTITION_SIZE  := 33554432
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
+BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 1388314624
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x105c0000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
@@ -60,3 +172,5 @@ BOARD_CUSTOM_RECOVERY_UI         := \
 endif
 
 BOARD_HAS_NO_SELECT_BUTTON := true
+
+-include vendor/xiaomi/cancro/BoardConfigVendor.mk
