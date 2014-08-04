@@ -34,6 +34,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/ramdisk/init.target.rc:root/init.target.rc \
     $(LOCAL_PATH)/rootdir/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/mount_ext4.sh:system/mount_ext4.sh
+
 PRODUCT_PACKAGES += \
     dualboot_init
 
