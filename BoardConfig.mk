@@ -38,11 +38,20 @@ TARGET_PREBUILT_KERNEL := $(COMMON_PATH)/kernel
 TARGET_RECOVERY_FSTAB            := $(COMMON_PATH)/rootdir/ramdisk/fstab.qcom
 RECOVERY_FSTAB_VERSION           := 2
 USE_CHINESE_RECOVERY := true
-BOARD_USE_CUSTOM_RECOVERY_FONT   := \"fontcn46_28x73.h\"
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
+
+USE_CHINESE_RECOVERY := true
+ifneq ($(USE_CHINESE_RECOVERY),true)
+BOARD_USE_CUSTOM_RECOVERY_FONT   := \"roboto_15x24.h\"
+BOARD_CUSTOM_RECOVERY_UI         := \
+	../../$(COMMON_PATH)/recovery/dualboot.c \
+	../../$(COMMON_PATH)/recovery/recovery_ui.c
+else
+BOARD_USE_CUSTOM_RECOVERY_FONT   := \"fontcn46_28x73.h\"
 BOARD_CUSTOM_RECOVERY_UI         := \
 	../../$(COMMON_PATH)/recovery/dualboot_cn.c \
 	../../$(COMMON_PATH)/recovery/recovery_ui_cn.c
+endif
 
 BOARD_HAS_NO_SELECT_BUTTON := true
