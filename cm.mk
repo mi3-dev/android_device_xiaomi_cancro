@@ -11,6 +11,12 @@ PRODUCT_RELEASE_NAME := cancro
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
+# Inherit some common CM stuff
+$(call inherit-product, vendor/cm/config/gsm.mk)
+
+# Enhanced NFC
+$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
+
 # Inherit device configuration
 $(call inherit-product, device/xiaomi/cancro/device_cancro.mk)
 
