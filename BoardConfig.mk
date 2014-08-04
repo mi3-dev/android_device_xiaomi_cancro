@@ -1,5 +1,7 @@
 USE_CAMERA_STUB := true
 
+BOARD_VENDOR := xiaomi
+
 COMMON_PATH := device/xiaomi/cancro
 
 # inherit from the proprietary version
