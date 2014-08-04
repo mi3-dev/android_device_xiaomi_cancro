@@ -8,14 +8,6 @@ $(call inherit-product-if-exists, vendor/xiaomi/cancro/cancro-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/xiaomi/cancro/overlay
 
 LOCAL_PATH := device/xiaomi/cancro
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
-else
-	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
 
 # Charger
 PRODUCT_COPY_FILES += \
@@ -44,6 +36,9 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     dualboot_init
+
+PRODUCT_PACKAGES += \
+    pronto_wlan.ko
 
 $(call inherit-product, build/target/product/full.mk)
 

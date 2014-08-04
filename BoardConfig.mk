@@ -5,18 +5,22 @@ COMMON_PATH := device/xiaomi/cancro
 # inherit from the proprietary version
 -include vendor/xiaomi/cancro/BoardConfigVendor.mk
 
-TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
-TARGET_BOARD_PLATFORM := unknown
+TARGET_NO_RADIOIMAGE  := true
+
+TARGET_BOARD_PLATFORM := msm8974
+TARGET_BOOTLOADER_BOARD_NAME := MSM8974
+
+# Architecture
+TARGET_ARCH := arm
+TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_ARCH_VARIANT := armv7-a-neon
-ARCH_ARM_HAVE_TLS_REGISTER := true
-TARGET_CPU_VARIANT := generic
+TARGET_CPU_SMP := true
+TARGET_CPU_VARIANT := krait
+TARGET_USE_KRAIT_BIONIC_OPTIMIZATION := true
 
-TARGET_BOOTLOADER_BOARD_NAME := cancro
-
-BOARD_KERNEL_SEPARATED_DT := true
+BOARD_KERNEL_SEPARATED_DT :=  true
 BOARD_CUSTOM_BOOTIMG_MK   := $(COMMON_PATH)/mkbootimg.mk
 
 BOARD_KERNEL_CMDLINE := ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
@@ -31,8 +35,6 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x105c0000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x105c0000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x105c0000
 BOARD_FLASH_BLOCK_SIZE := 131072
-
-TARGET_PREBUILT_KERNEL := $(COMMON_PATH)/kernel
 
 # Recovery
 TARGET_RECOVERY_FSTAB            := $(COMMON_PATH)/rootdir/ramdisk/fstab.qcom
