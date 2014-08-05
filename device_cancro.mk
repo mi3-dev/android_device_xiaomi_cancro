@@ -35,7 +35,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/mount_ext4.sh:system/mount_ext4.sh
+    $(LOCAL_PATH)/mount_ext4.sh:system/bin/mount_ext4.sh \
+    $(LOCAL_PATH)/rootdir/ramdisk/e2fsck_static:root/sbin/e2fsck_static \
+    $(LOCAL_PATH)/e2fsck:system/bin/e2fsck
 
 PRODUCT_PACKAGES += \
     dualboot_init

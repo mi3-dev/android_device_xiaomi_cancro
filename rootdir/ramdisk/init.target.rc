@@ -45,8 +45,9 @@ on post-fs
     export LD_PRELOAD /vendor/lib/libNimsWrap.so
 
 on fs
-    exec /sbin/dualboot_init ./fstab.qcom
-    mount_all ./fstab.qcom.patched
+    #exec /sbin/dualboot_init ./fstab.qcom
+    #mount_all ./fstab.qcom.patched
+    mount_all ./fstab.qcom
 
     # Keeping following partitions outside fstab file. As user may not have
     # these partition flashed on the device. Failure to mount any partition in fstab file
