@@ -101,9 +101,6 @@ PRODUCT_PACKAGES += \
     hostapd.accept \
     hostapd.deny
 
-PRODUCT_PACKAGES += \
-    wcnss_service
-
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/keylayout/atmel-maxtouch.kl:system/usr/keylayout/atmel-maxtouch.kl \
