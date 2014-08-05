@@ -1248,3 +1248,4 @@
 /sys/devices/system/cpu/cpu*    cpufreq/thermal_cap_freq    0644    system    system
 /sys/devices/system/cpu/cpu*    cpufreq/scaling_max_freq    0644    system    system
 /sys/devices/system/cpu/cpu*    cpufreq/scaling_min_freq    0644    system    system
+/sys/devices/system/cpu/nrcpus                              0644    system    system
