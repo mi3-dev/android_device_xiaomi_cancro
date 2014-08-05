@@ -19,7 +19,11 @@
 
 #define PROPERTY_PERMS_APPEND \
     { "persist.audio.",   AID_SYSTEM,   0 }, \
+    { "persist.audio.",   AID_MEDIA, 0}, \
     { "persist.sys.camera.", AID_MEDIA, 0 }, \
     { "camera.", AID_MEDIA, 0 }, \
-    { "sys.media.", AID_MEDIA, 0 },
+    { "sys.media.", AID_MEDIA, 0 }, \
+    { "permanent.radio.", AID_RADIO,    0 }, \
+    { "audio.",           AID_MEDIA,    0}, \
+    { "persist.atmel.",   AID_SYSTEM,   0 },
 #endif /* DEVICE_PERMS_H */
