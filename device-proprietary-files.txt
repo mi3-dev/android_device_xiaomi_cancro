@@ -437,3 +437,5 @@ bin/e2fsck
 lib/hw/consumerir.msm8974.so
 
 vendor/lib/hwpower.qcom.so
+
+bin/changepowermode.sh
