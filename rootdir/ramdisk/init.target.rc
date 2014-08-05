@@ -390,3 +390,14 @@ on property:persist.sys.display_idle=1
 on property:persist.sys.display_idle=0
     write /sys/devices/virtual/graphics/fb0/msm_fb_dispparam 0xF0000
 
+service sensorext /system/bin/sensorextd
+    class late_start
+    user root
+    group root
+    disabled
+
+service wait4sensorhub /system/bin/wait4sensorhub.sh
+    class late_start
+    user root
+    group root
+    oneshot

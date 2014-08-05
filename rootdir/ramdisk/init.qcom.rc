@@ -184,6 +184,46 @@ on boot
     # For power module access
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 
+    chown system system /sys/class/leds/button-backlight1/brightness
+    chown system system /sys/class/leds/green/blink
+    chown system system /sys/class/leds/blue/blink
+    chown system system /sys/class/leds/flashlight/brightness
+
+on charger
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/system /system wait ro barrier=1
+    write /sys/class/input/input0/enabled 0
+    write /sys/class/input/input1/enabled 0
+    write /sys/class/input/input2/enabled 0
+    write /sys/class/input/input3/enabled 0
+    write /sys/class/input/input4/enabled 0
+    write /sys/class/input/input5/enabled 0
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "userspace"
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed 300000
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "userspace"
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_setspeed 300000
+    write /sys/devices/system/cpu/cpu2/online 0
+    write /sys/devices/system/cpu/cpu3/online 0
+    write /sys/module/msm_thermal/parameters/enabled "N"
+    chown root system /sys/power/wake_lock
+    chown root system /sys/power/wake_unlock
+    chmod 0664 /sys/power/wake_lock
+    chmod 0664 /sys/power/wake_lock
+    chown root system /sys/module/qpnp_charger/parameters/charger_monitor
+    chown root system /sys/module/qpnp_charger/parameters/ext_ovp_present
+    chown root system /sys/class/power_supply/battery/input_current_max
+    chown root system /sys/class/power_supply/battery/input_current_trim
+    chown root system /sys/class/power_supply/battery/input_current_settled
+    chown root system /sys/class/power_supply/battery/voltage_min
+    chmod 0664 /sys/class/power_supply/battery/input_current_max
+    chmod 0664 /sys/class/power_supply/battery/input_current_trim
+    chmod 0664 /sys/class/power_supply/battery/input_current_settled
+    chmod 0664 /sys/class/power_supply/battery/voltage_min
+    chmod 0664 /sys/module/qpnp_charger/parameters/charger_monitor
+    start hvdcp
+    start charger_monitor
+    class_start charger
+
 # msm specific files that need to be created on /data
 on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
