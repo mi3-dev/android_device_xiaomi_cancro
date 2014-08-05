@@ -246,6 +246,10 @@ PRODUCT_PACKAGES += \
     libantradio \
     AntHalService
 
+#Bluetooth
+PRODUCT_PROPERTY_OVERRIDES += \
+    qcom.bt.dev_power_class=1
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
