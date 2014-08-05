@@ -36,8 +36,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/mount_ext4.sh:system/bin/mount_ext4.sh \
-    $(LOCAL_PATH)/rootdir/ramdisk/e2fsck_static:root/sbin/e2fsck_static \
-    $(LOCAL_PATH)/e2fsck:system/bin/e2fsck
+    $(LOCAL_PATH)/rootdir/ramdisk/e2fsck_static:root/sbin/e2fsck_static
 
 PRODUCT_PACKAGES += \
     dualboot_init

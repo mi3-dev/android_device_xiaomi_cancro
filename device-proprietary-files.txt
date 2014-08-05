@@ -208,6 +208,13 @@ etc/firmware/cpp_firmware_v1_1_1.fw
 etc/firmware/cpp_firmware_v1_1_6.fw
 etc/firmware/cpp_firmware_v1_2_0.fw
 
+vendor/lib/libarcsoft_beauty_shot.so
+vendor/lib/libFaceDeform.so
+vendor/lib/libFaceProc.so
+vendor/lib/libt2tmanager.so
+
+vendor/lib/libNimsWrap.so
+
 # Sensors
 etc/sensor_def_qcomdev.conf
 vendor/lib/libAKM8963.so
@@ -335,6 +342,11 @@ vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxWmaDec.so
 vendor/lib/libSHIMDivxDrm.so
+lib/libOmxAacEnc.so
+lib/libOmxAmrEnc.so
+lib/libOmxEvrcEnc.so
+lib/libOmxQcelp13Enc.so
+lib/libOmxVdecHevc.so
 
 # Postprocessing
 #-app/PPPreference.apk
@@ -383,11 +395,17 @@ vendor/lib/libril-qcril-hook-oem.so
 
 # Sensors
 bin/sensors.qcom
+bin/sensorextd
+bin/wait4sensorhub.sh
+bin/set_sensorprop.sh
 vendor/lib/hw/sensors.msm8974.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
 vendor/lib/libsensor_test.so
 vendor/lib/libsensor_user_cal.so
+
+bin/smonsir
+bin/smprosrv
 
 # Thermal
 bin/thermal-engine
@@ -413,3 +431,9 @@ bin/hvdcp
 lib/hw/lights.msm8974.so
 lib/hw/nfc_nci_nfca.default.so
 
+bin/dumpe2fs
+bin/e2fsck
+
+lib/hw/consumerir.msm8974.so
+
+vendor/lib/hwpower.qcom.so
