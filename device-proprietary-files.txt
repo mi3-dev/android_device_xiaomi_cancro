@@ -250,7 +250,6 @@ vendor/lib/libNimsWrap.so
 # Sensors
 etc/sensor_def_qcomdev.conf
 vendor/lib/libAKM8963.so
-lib/hw/sensors.st_mve.so
 
 # Bluetooth
 bin/btnvtool
@@ -430,8 +429,6 @@ vendor/lib/libril-qcril-hook-oem.so
 # Sensors
 bin/sensors.qcom
 bin/sensorextd
-bin/wait4sensorhub.sh
-bin/set_sensorprop.sh
 vendor/lib/hw/sensors.msm8974.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
@@ -488,3 +485,5 @@ lib/libqminvapi.so
 vendor/lib/libdsucsd.so
 vendor/lib/libjpegdhw.so
 vendor/lib/liboptizoom.so
+
+bin/atmel_hover_tune.sh
