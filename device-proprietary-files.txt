@@ -11,6 +11,7 @@ vendor/lib/libmmcamera2_frame_algorithm.so
 vendor/lib/libmmcamera2_iface_modules.so
 vendor/lib/libmmcamera2_imglib_modules.so
 vendor/lib/libmmcamera2_isp_modules.so
+vendor/lib/libmmcamera2_q3a_special.so
 vendor/lib/libmmcamera2_pproc_modules.so
 vendor/lib/libmmcamera2_sensor_modules.so
 vendor/lib/libmmcamera2_stats_algorithm.so
@@ -67,7 +68,7 @@ lib/libchromatix_imx214_liveshot.so
 lib/libchromatix_imx215_liveshot.so
 lib/libchromatix_imx219_liveshot.so
 lib/libchromatix_imx224_liveshot.so
-
+vendor/lib/libchromaflash.so
 vendor/lib/libchromatix_imx132_common.so
 vendor/lib/libchromatix_imx132_default_video.so
 vendor/lib/libchromatix_imx132_liveshot.so
@@ -203,6 +204,37 @@ vendor/lib/libchromatix_skuf_ov5648_p5v23c_default_video.so
 vendor/lib/libchromatix_skuf_ov5648_p5v23c_preview.so
 vendor/lib/libchromatix_skuf_ov5648_p5v23c_snapshot.so
 
+vendor/lib/libactuator_ad5823_camcorder.so
+vendor/lib/libactuator_ad5823_camera.so
+vendor/lib/libactuator_ad5823.so
+vendor/lib/libactuator_ak7345_camcorder.so
+vendor/lib/libactuator_ak7345_camera.so
+vendor/lib/libactuator_ak7345.so
+vendor/lib/libactuator_bu6313_camcorder.so
+vendor/lib/libactuator_bu6313_camera.so
+vendor/lib/libactuator_bu6313.so
+vendor/lib/libactuator_dw9714_camcorder.so
+vendor/lib/libactuator_dw9714_camera.so
+vendor/lib/libactuator_dw9714.so
+vendor/lib/libactuator_dw9716_camcorder.so
+vendor/lib/libactuator_dw9716_camera.so
+vendor/lib/libactuator_dw9716.so
+vendor/lib/libactuator_iu074_camcorder.so
+vendor/lib/libactuator_iu074_camera.so
+vendor/lib/libactuator_iu074.so
+vendor/lib/libactuator_lc8214_camcorder.so
+vendor/lib/libactuator_lc8214_camera.so
+vendor/lib/libactuator_lc8214.so
+vendor/lib/libactuator_ov12830_camcorder.so
+vendor/lib/libactuator_ov12830_camera.so
+vendor/lib/libactuator_ov12830.so
+vendor/lib/libactuator_ov8825_camcorder.so
+vendor/lib/libactuator_ov8825_camera.so
+vendor/lib/libactuator_ov8825.so
+vendor/lib/libactuator_rohm_bu64243gwz_camcorder.so
+vendor/lib/libactuator_rohm_bu64243gwz_camera.so
+vendor/lib/libactuator_rohm_bu64243gwz.so
+
 # Camera firmware
 etc/firmware/cpp_firmware_v1_1_1.fw
 etc/firmware/cpp_firmware_v1_1_6.fw
@@ -243,8 +275,10 @@ vendor/lib/libscve_stub.so
 # Audio
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
+vendor/lib/libacdbmapper.so
 vendor/lib/libadiertac.so
 vendor/lib/libaudcal.so
+vendor/lib/libaudioalsa.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
@@ -439,3 +473,18 @@ lib/hw/consumerir.msm8974.so
 vendor/lib/hw/power.qcom.so
 
 bin/changepowermode.sh
+bin/ssr_diag
+bin/qcom-system-daemon
+bin/charger_monitor
+bin/mm-qcamera-app
+bin/profiler_daemon
+vendor/lib/libprofiler_msmadc.so
+bin/qmiproxy
+etc/lut.dat
+lib/libmm-omxcore.so
+lib/libmm-qcamera.so
+lib/libqminvapi.so
+
+vendor/lib/libdsucsd.so
+vendor/lib/libjpegdhw.so
+vendor/lib/liboptizoom.so
