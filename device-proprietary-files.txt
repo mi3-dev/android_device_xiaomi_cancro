@@ -11,7 +11,7 @@ vendor/lib/libmmcamera2_frame_algorithm.so
 vendor/lib/libmmcamera2_iface_modules.so
 vendor/lib/libmmcamera2_imglib_modules.so
 vendor/lib/libmmcamera2_isp_modules.so
-vendor/lib/libmmcamera2_q3a_special.so
+#vendor/lib/libmmcamera2_q3a_special.so
 vendor/lib/libmmcamera2_pproc_modules.so
 vendor/lib/libmmcamera2_sensor_modules.so
 vendor/lib/libmmcamera2_stats_algorithm.so
@@ -429,7 +429,7 @@ vendor/lib/libril-qcril-hook-oem.so
 # Sensors
 bin/sensors.qcom
 bin/sensorextd
-vendor/lib/hw/sensors.msm8974.so
+####vendor/lib/hw/sensors.msm8974.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
 vendor/lib/libsensor_test.so
@@ -487,3 +487,12 @@ vendor/lib/libjpegdhw.so
 vendor/lib/liboptizoom.so
 
 bin/atmel_hover_tune.sh
+
+vendor/lib/liblistenhardware.so
+vendor/lib/liblistenjni.so
+vendor/lib/liblisten.so
+vendor/lib/liblistensoundmodel2.so
+vendor/lib/liblistensoundmodel.so
+lib/hw/audio_policy.msm8974.so
+lib/hw/audio.primary.msm8974.so
+lib/libtinyalsa.so
