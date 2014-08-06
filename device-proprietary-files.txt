@@ -496,3 +496,6 @@ vendor/lib/liblistensoundmodel.so
 lib/hw/audio_policy.msm8974.so
 lib/hw/audio.primary.msm8974.so
 lib/libtinyalsa.so
+
+bin/wcnss_filter
+bin/wcnss_service
