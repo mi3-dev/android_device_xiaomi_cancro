@@ -256,6 +256,13 @@ PRODUCT_PACKAGES += \
     libantradio \
     AntHalService
 
+# fmradio support
+PRODUCT_PACKAGES += \
+    qcom.fmradio \
+    libqcomfm_jni \
+    FM2 \
+    FMRecord
+
 #Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     qcom.bt.dev_power_class=1
