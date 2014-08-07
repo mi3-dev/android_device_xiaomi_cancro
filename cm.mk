@@ -25,9 +25,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit device configuration
 $(call inherit-product, device/xiaomi/cancro/device_cancro.mk)
 
-# Inherit some common CM stuff
-$(call inherit-product, vendor/cm/config/gsm.mk)
-
 # Enhanced NFC
 $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
