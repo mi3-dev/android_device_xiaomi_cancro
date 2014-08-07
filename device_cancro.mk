@@ -307,5 +307,5 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalv
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
 # call the proprietary setup
-$(call inherit-product-if-exists, vendor/xiaomi/cancro/cancro-vendor.mk)
+$(call inherit-product, vendor/xiaomi/cancro/cancro-vendor.mk)
 
