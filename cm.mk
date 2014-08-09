@@ -23,7 +23,7 @@ PRODUCT_RELEASE_NAME := cancro
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/xiaomi/cancro/device_cancro.mk)
+$(call inherit-product, device/xiaomi/cancro/cancro.mk)
 
 # Enhanced NFC
 $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
