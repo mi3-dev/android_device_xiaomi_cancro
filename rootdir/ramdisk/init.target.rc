@@ -337,21 +337,6 @@ service changepowermode /system/bin/changepowermode.sh
     oneshot
     disabled
 
-on property:persist.sys.aries.power_profile=high
-    start changepowermode
-    stop thermal-engine
-    start thermal-perf
-
-on property:persist.sys.aries.power_profile=middle
-    start changepowermode
-    stop thermal-perf
-    start thermal-engine
-
-on property:persist.sys.aries.power_profile=low
-    start changepowermode
-    stop thermal-perf
-    start thermal-engine
-
 on property:persist.sys.display_prefer=0
     write /sys/devices/virtual/graphics/fb0/msm_fb_dispparam 0x2
 on property:persist.sys.display_prefer=1

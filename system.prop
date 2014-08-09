@@ -168,8 +168,6 @@ ro.miui.internal.storage=/data/media
 # enable auto-brightness adjustment
 persist.power.useautobrightadj=true
 
-# power mode
-persist.sys.aries.power_profile=middle
 
 ro.qc.sdk.izat.premium_enabled=1
 ro.qc.sdk.izat.service_mask=0x5

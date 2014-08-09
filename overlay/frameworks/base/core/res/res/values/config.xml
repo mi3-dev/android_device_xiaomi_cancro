@@ -324,9 +324,5 @@
     -->
     <integer name="config_doubleTapOnHomeBehavior">0</integer>
 
-    <!-- Performance profiles -->
-    <!-- Performance profiles -->
-    <string name="config_perf_profile_prop">persist.sys.aries.power_profile</string>
-    <string name="config_perf_profile_default_entry">middle</string>
 
 </resources>

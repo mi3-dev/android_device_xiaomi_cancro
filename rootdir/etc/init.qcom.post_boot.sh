@@ -364,7 +364,6 @@ case "$target" in
         chown system.system /sys/module/cpu_boost/parameters/input_boost_ms
         echo 1 > /dev/cpuctl/apps/cpu.notify_on_migrate
         start mpdecision
-        setprop persist.sys.aries.power_profile `getprop persist.sys.aries.power_profile`
     ;;
 esac
 
