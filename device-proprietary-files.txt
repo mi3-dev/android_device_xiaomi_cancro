@@ -305,14 +305,21 @@ etc/firmware/Signedrompatch_v24.bin
 # DRM
 bin/qseecomd
 lib/libQSEEComAPI.so:vendor/lib/libQSEEComAPI.so
+vendor/lib/drm/libdrmprplugin.so
 vendor/lib/libdrmdiag.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 vendor/lib/librpmb.so
+vendor/lib/libprdrmdecrypt.so
 vendor/lib/libssd.so
+vendor/lib/libSecureUILib.so
 vendor/lib/libsecureui.so
+vendor/lib/libsecureuisvc_jni.so
+vendor/lib/libsecureui_svcsock.so
 vendor/lib/lib-sec-disp.so
 vendor/lib/libStDrvInt.so
+vendor/lib/libtzdrmgenprov.so
+vendor/lib/libtzplayready.so
 
 # GPS
 -app/com.qualcomm.location.apk
