@@ -489,6 +489,7 @@ vendor/lib/libprofiler_msmadc.so
 bin/qmiproxy
 etc/lut.dat
 lib/libmm-omxcore.so
+vendor/lib/libOmxMux.so
 lib/libmm-qcamera.so
 lib/libqminvapi.so
 
