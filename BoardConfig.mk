@@ -64,6 +64,9 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/xiaomi/cancro/bluetooth
 BOARD_HAVE_QCOM_FM := true
 QCOM_FM_ENABLED := true
 
+# Consumer IR
+TARGET_PROVIDES_CONSUMERIR_HAL := true
+
 # SELinux
 BOARD_SEPOLICY_DIRS += \
    $(COMMON_PATH)/sepolicy
@@ -76,6 +79,7 @@ BOARD_SEPOLICY_UNION += \
     cne.te \
     qmux.te \
     mpdecision.te \
+    nfc.te \
     thermald.te \
     ueventd.te \
     vold.te \
