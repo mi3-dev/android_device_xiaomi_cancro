@@ -475,8 +475,6 @@ lib/libnfctester_jni.so
 bin/dumpe2fs
 bin/e2fsck
 
-lib/hw/consumerir.msm8974.so
-
 vendor/lib/hw/power.qcom.so
 
 bin/changepowermode.sh
@@ -504,9 +502,6 @@ vendor/lib/liblistenjni.so
 vendor/lib/liblisten.so
 vendor/lib/liblistensoundmodel2.so
 vendor/lib/liblistensoundmodel.so
-lib/hw/audio_policy.msm8974.so
-lib/hw/audio.primary.msm8974.so
-lib/libtinyalsa.so
 
 bin/wcnss_filter
 bin/wcnss_service
