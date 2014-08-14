@@ -79,7 +79,6 @@ BOARD_SEPOLICY_UNION += \
     cne.te \
     qmux.te \
     mpdecision.te \
-    nfc.te \
     thermald.te \
     ueventd.te \
     vold.te \
