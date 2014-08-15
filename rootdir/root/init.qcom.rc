@@ -886,14 +886,6 @@ on property:persist.radio.ramdump_sdcard=1
     write /sys/module/subsystem_restart/parameters/enable_ramdumps 1
     start modem_dump
 
-service qlogd /system/xbin/qlogd
-    class main
-    disabled
-on property:persist.sys.qlogd=1
-    start qlogd
-on property:persist.sys.qlogd=0
-    stop qlogd
-
 # CM Performance Profiles
 
 # Powersave
