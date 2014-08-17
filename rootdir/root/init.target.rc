@@ -332,11 +332,6 @@ service nqs /system/bin/nqs
     user system
     group drmrpc
 
-service changepowermode /system/bin/changepowermode.sh
-    user root
-    oneshot
-    disabled
-
 on property:persist.sys.display_prefer=0
     write /sys/devices/virtual/graphics/fb0/msm_fb_dispparam 0x2
 on property:persist.sys.display_prefer=1
