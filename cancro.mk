@@ -120,12 +120,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     $(LOCAL_PATH)/nfc/libnfc-brcm-20791b05.conf:system/etc/libnfc-brcm-20791b05.conf
 
-# NFC packages
-PRODUCT_PACKAGES += \
-    Nfc \
-    Tag \
-    com.android.nfc_extras
-
 ifeq ($(TARGET_BUILD_VARIANT),user)
     NFCEE_ACCESS_PATH := $(LOCAL_PATH)/nfc/nfcee_access.xml
 else
