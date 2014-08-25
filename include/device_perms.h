@@ -25,5 +25,8 @@
     { "sys.media.", AID_MEDIA, 0 }, \
     { "permanent.radio.", AID_RADIO,    0 }, \
     { "audio.",           AID_MEDIA,    0}, \
-    { "persist.atmel.",   AID_SYSTEM,   0 },
+    { "persist.atmel.",   AID_SYSTEM,   0 }, \
+    { "dolby.audio",      AID_MEDIA,    0 }, \
+    { "dolby.", AID_SYSTEM,   0 },
+
 #endif /* DEVICE_PERMS_H */
