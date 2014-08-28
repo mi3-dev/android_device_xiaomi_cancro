@@ -296,6 +296,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
+## Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := cancro
+PRODUCT_NAME := cancro
+PRODUCT_BRAND := Xiaomi
+PRODUCT_MODEL := MI 3W
+PRODUCT_MANUFACTURER := Xiaomi
+
 # call dalvik heap config
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
 
