@@ -495,9 +495,6 @@ vendor/lib/liblisten.so
 vendor/lib/liblistensoundmodel2.so
 vendor/lib/liblistensoundmodel.so
 
-bin/wcnss_filter
-bin/wcnss_service
-
 #fm
 bin/fmconfig
 bin/fm_qsoc_patches
