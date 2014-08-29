@@ -483,7 +483,6 @@ vendor/lib/libOmxMux.so
 lib/libmm-qcamera.so
 lib/libqminvapi.so
 
-vendor/lib/libdsucsd.so
 vendor/lib/libjpegdhw.so
 vendor/lib/liboptizoom.so
 
