@@ -191,14 +191,9 @@ service qosmgrd /system/bin/qosmgr /system/etc/qosmgr_rules.xml
    disabled
 
 service thermal-engine /system/bin/thermal-engine
+   class main
    user root
-   group root
-   disabled
-
-service thermal-perf /system/bin/thermal-engine --config /system/etc/thermal-engine-perf.conf
-   user root
-   group root
-   disabled
+   group radio system
 
 service security-check1 /sbin/security_boot_check system
     class core
