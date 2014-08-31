@@ -61,6 +61,10 @@ allow appdomain mpdecision:unix_stream_socket connectto;
 # Set prio
 allow mpdecision kernel:process setsched;
 
+# Control thermal mitigation
+allow mpdecision thermald:unix_stream_socket connectto;
+allow mpdecision thermald_socket:sock_file rw_file_perms;
+
 # FIXME!
 allow mpdecision self:capability dac_override;
 allow mpdecision system_data_file:dir rw_dir_perms;
