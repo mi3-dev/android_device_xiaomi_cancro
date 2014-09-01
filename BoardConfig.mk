@@ -74,6 +74,9 @@ CM_POWERHAL_EXTENSION := qcom
 # Consumer IR
 TARGET_PROVIDES_CONSUMERIR_HAL := true
 
+# Camera
+USE_DEVICE_SPECIFIC_CAMERA := true
+
 # SELinux
 BOARD_SEPOLICY_DIRS += \
    $(COMMON_PATH)/sepolicy
