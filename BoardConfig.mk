@@ -149,9 +149,6 @@ TARGET_HW_DISK_ENCRYPTION := true
 # Added to indicate that protobuf-c is supported in this build
 PROTOBUF_SUPPORTED := true
 
-# Enable CPU boosting events in the power HAL
-TARGET_USES_CPU_BOOST_HINT := true
-
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
