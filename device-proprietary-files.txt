@@ -468,16 +468,8 @@ lib/hw/lights.msm8974.so
 lib/hw/nfc_nci_nfca.default.so
 vendor/firmware/BCM20791B5_002.006.013.0011.0087_Generic_I2C_NCD_Unsigned_configdata.ncd
 vendor/firmware/BCM20791B5_002.006.013.0011.0087_Generic_PreI2C_NCD_Unsigned_configdata.ncd
-lib/libnfc_nci_jni.so
-lib/libnfc-nci.so
-lib/libnfctester_jni.so
 
-bin/dumpe2fs
-bin/e2fsck
 
-vendor/lib/hw/power.qcom.so
-
-bin/changepowermode.sh
 bin/ssr_diag
 bin/qcom-system-daemon
 bin/charger_monitor
