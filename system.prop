@@ -19,6 +19,7 @@ persist.radio.ramdump_sdcard=1
 DEVICE_PROVISIONED=1
 # Start in global mode
 #ro.telephony.default_network=22
+persist.radio.apm_sim_not_pwdn=0
 
 debug.sf.hw=1
 debug.egl.hw=1
