@@ -252,6 +252,12 @@ PRODUCT_PACKAGES += \
     FM2 \
     FMRecord
 
+# Immersion Vibrator tools
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/immersion/immvibed:system/bin/immvibed \
+    $(LOCAL_PATH)/immersion/libImmVibeJ.so:system/lib/libImmVibeJ.so \
+    $(LOCAL_PATH)/immersion/libpparam.so:system/lib/libpparam.so
+
 #Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     qcom.bt.dev_power_class=1
