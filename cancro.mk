@@ -252,12 +252,6 @@ PRODUCT_PACKAGES += \
     FM2 \
     FMRecord
 
-# Immersion Vibrator tools
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/immersion/immvibed:system/bin/immvibed \
-    $(LOCAL_PATH)/immersion/libImmVibeJ.so:system/lib/libImmVibeJ.so \
-    $(LOCAL_PATH)/immersion/libpparam.so:system/lib/libpparam.so
-
 #Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     qcom.bt.dev_power_class=1
@@ -300,13 +294,6 @@ PRODUCT_COPY_FILES += \
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-
-## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := cancro
-PRODUCT_NAME := cancro
-PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := MI 3W
-PRODUCT_MANUFACTURER := Xiaomi
 
 # call dalvik heap config
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
