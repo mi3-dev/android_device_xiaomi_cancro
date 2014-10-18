@@ -104,7 +104,19 @@ persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
 
+# qualcomm sensors enable
+ro.qualcomm.sensors.qmd=true
+ro.qualcomm.sensors.smd=true
 ro.qc.sdk.sensors.gestures=true
+ro.qualcomm.sensors.pedometer=true
+ro.qualcomm.sensors.pam=true
+ro.qualcomm.sensors.scrn_ortn=true
+ro.qc.sensors.step_detector=true
+ro.qc.sensors.step_counter=true
+ro.qualcomm.sensors.georv=true
+debug.qualcomm.sns.hal=w
+debug.qualcomm.sns.daemon=w
+debug.qualcomm.sns.libsensor1=w
 ro.qc.sdk.gestures.camera=false
 ro.qc.sdk.camera.facialproc=false
 # system prop for NFC DT
