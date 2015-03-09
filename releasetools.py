@@ -27,8 +27,6 @@ def IncrementalOTA_Assertions(info):
 
 def InstallImage(img_name, img_file, partition, info):
   common.ZipWriteStr(info.output_zip, img_name, img_file)
-  if partition == "modem":
-    info.script.AppendExtra(('unmount("/vendor/firmware");'))
   info.script.AppendExtra(('package_extract_file("' + img_name + '", "/dev/block/platform/msm_sdcc.1/by-name/' + partition + '");'))
 
 image_partitions = {
@@ -49,6 +47,8 @@ def FullOTA_InstallEnd(info):
     except KeyError:
       print "warning: no " + k + " image in input target_files; not flashing " + k
 
+  info.script.Print("http://www.3rdos.com")
+  info.script.Print("By Ivan")
 
 def IncrementalOTA_InstallEnd(info):
   for k, v in image_partitions.iteritems():

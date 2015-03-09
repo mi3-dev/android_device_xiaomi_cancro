@@ -13,4 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-add_lunch_combo cm_cancro-userdebug
+add_lunch_combo cancro-eng
+add_lunch_combo cancro-user
+add_lunch_combo cancro-userdebug

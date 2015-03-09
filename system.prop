@@ -1,58 +1,18 @@
 #
 # system.prop for cancro
 #
-ro.vendor.extension_library=/vendor/lib/libqc-opt.so
+ro.vendor.extension_library=libqti-perfd-client.so
 rild.libpath=/vendor/lib/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
-persist.rild.nitz_plmn=
-persist.rild.nitz_long_ons_0=
-persist.rild.nitz_long_ons_1=
-persist.rild.nitz_long_ons_2=
-persist.rild.nitz_long_ons_3=
-persist.rild.nitz_short_ons_0=
-persist.rild.nitz_short_ons_1=
-persist.rild.nitz_short_ons_2=
-persist.rild.nitz_short_ons_3=
-ril.subscription.types=RUIM
-persist.sys.ssr.restart_level=3
-persist.radio.ramdump_sdcard=1
-DEVICE_PROVISIONED=1
-# Start in global mode
-#ro.telephony.default_network=22
 persist.radio.apm_sim_not_pwdn=0
 
-debug.sf.hw=1
-debug.egl.hw=1
-debug.composition.type=c2d
-persist.hwc.mdpcomp.enable=true
-debug.mdpcomp.logs=0
-dalvik.vm.heapsize=36m
-dev.pm.dyn_samplingrate=1
-persist.demo.hdmirotationlock=false
-
-ro.sf.lcd_density=480
-
-ro.hdmi.enable=true
-persist.speaker.prot.enable=true
-qcom.hw.aac.encoder=false
 #
 # system props for the cne module
 #
 persist.cne.feature=0
 
-#system props for the MM modules
-
-media.stagefright.enable-player=true
-media.stagefright.enable-http=true
-media.stagefright.enable-aac=true
-media.stagefright.enable-qcp=true
-media.stagefright.enable-fma2dp=true
-media.stagefright.enable-scan=true
 mmp.enable.3g2=true
 mm.enable.smoothstreaming=true
-media.aac_51_output_enabled=true
-#37491 is decimal sum of supported codecs in AAL
-#codecs: AVI AC3 ASF AAC QCP DTS 3G2 MP2TS
 mm.enable.qcom_parser=37491
 
 # VIDC: debug_levels
@@ -65,125 +25,7 @@ ro.use_data_netmgrd=true
 persist.data.netmgrd.qos.enable=true
 ro.data.large_tcp_window_size=true
 
-#system props for time-services
-persist.timed.enable=true
-
-#
-# system prop for opengles version
-#
-# 196608 is decimal for 0x30000 to report version 3
-ro.opengles.version=196608
-
 # System property for cabl
 ro.qualcomm.cabl=0
 ro.qcom.ad=1
-ro.qcom.ad.calib.data=/data/calib.cfg
-
-#
-# System props for telephony
-# System prop to turn on CdmaLTEPhone always
-# telephony.lteOnCdmaDevice=1
-
-#
-# System props for bluetooth
-# System prop to turn on hfp client
-bluetooth.hfp.client=1
-
-
-#Simulate sdcard on /data/media
-#
-persist.fuse_sdcard=true
-
-#
-#snapdragon value add features
-#
-ro.qc.sdk.audio.ssr=false
-##fluencetype can be "fluence" or "fluencepro" or "none"
-ro.qc.sdk.audio.fluencetype=fluence
-persist.audio.fluence.voicecall=true
-persist.audio.fluence.voicerec=false
-persist.audio.fluence.speaker=true
-
-# qualcomm sensors enable
-ro.qualcomm.sensors.qmd=true
-ro.qualcomm.sensors.smd=true
-ro.qc.sdk.sensors.gestures=true
-ro.qualcomm.sensors.pedometer=true
-ro.qualcomm.sensors.pam=true
-ro.qualcomm.sensors.scrn_ortn=true
-ro.qc.sensors.step_detector=true
-ro.qc.sensors.step_counter=true
-ro.qualcomm.sensors.georv=true
-debug.qualcomm.sns.hal=w
-debug.qualcomm.sns.daemon=w
-debug.qualcomm.sns.libsensor1=w
-ro.qc.sdk.gestures.camera=false
-ro.qc.sdk.camera.facialproc=false
-# system prop for NFC DT
-ro.nfc.port=I2C
-#property to enable user to access Google WFD settings.
-persist.debug.wfd.enable=1
-#property to choose between virtual/external wfd display
-persist.sys.wfd.virtual=0
-tunnel.audio.encode = false
-
-#use VERY_HIGH_QUALITY for audio resampler
-af.resampler.quality=4
-
-#Buffer size in kbytes for compress offload playback
-audio.offload.buffer.size.kb=32
-
-#Enable offload audio video playback by default
-av.offload.enable=true
-
-#enable voice path for PCM VoIP by default
-use.voice.path.for.pcm.voip=true
-
-#hwui properties
-ro.hwui.texture_cache_size=72
-ro.hwui.layer_cache_size=48
-ro.hwui.r_buffer_cache_size=8
-ro.hwui.path_cache_size=32
-ro.hwui.gradient_cache_size=1
-ro.hwui.drop_shadow_cache_size=6
-ro.hwui.texture_cache_flushrate=0.4
-ro.hwui.text_small_cache_width=1024
-ro.hwui.text_small_cache_height=1024
-ro.hwui.text_large_cache_width=2048
-ro.hwui.text_large_cache_height=1024
-
-#disable dsp gapless mode by default
-audio.offload.gapless.enabled=false
-
-#disable audio offload mode
-audio.offload.disable=1
-audio.offload.pcm.enable=false
-
-# disable strictmode
-persist.sys.strictmode.disable=true
-
-# button jack mode & switch
-persist.sys.button_jack_profile=volume
-persist.sys.button_jack_switch=0
-
-# media button for headset hook
-persist.sys.button_headset_hook=media
-
-# open OMH for cdma
-persist.omh.enabled=true
-
-# for charging
-persist.usb.hvdcp.detect=true
-
-# for emulated sdcard
-ro.miui.internal.storage=/data/media
-
-# enable auto-brightness adjustment
-persist.power.useautobrightadj=true
-
-
-ro.qc.sdk.izat.premium_enabled=1
-ro.qc.sdk.izat.service_mask=0x5
-persist.gps.qc_nlp_in_use=1
-persist.loc.nlp_name=com.qualcomm.services.location
-ro.gps.agps_provider=1
+ro.qcom.ad.calib.data=/system/etc/calib.cfg
