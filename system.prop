@@ -29,3 +29,6 @@ ro.data.large_tcp_window_size=true
 ro.qualcomm.cabl=0
 ro.qcom.ad=1
 ro.qcom.ad.calib.data=/system/etc/calib.cfg
+
+#For specail cdma card sms issue
+persist.radio.force_on_dc=true

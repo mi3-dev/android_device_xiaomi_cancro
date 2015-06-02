@@ -56,3 +56,15 @@ PRODUCT_COPY_FILES += \
     device/xiaomi/cancro/nfc/firmware/bcm2079x-b5_firmware.ncd:system/vendor/firmware/bcm2079x-b5_firmware.ncd \
     device/xiaomi/cancro/nfc/firmware/bcm2079x-b5_pre_firmware.ncd:system/vendor/firmware/bcm2079x-b5_pre_firmware.ncd \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
+
+# fmradio support
+PRODUCT_PACKAGES += \
+    qcom.fmradio \
+    libqcomfm_jni \
+    FM2 \
+    FMRecord
+
+PRODUCT_BOOT_JARS += qcom.fmradio
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.fm.transmitter=false
