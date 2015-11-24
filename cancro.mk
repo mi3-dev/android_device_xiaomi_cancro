@@ -20,17 +20,50 @@
 # Get the long list of APNs
 
 $(call inherit-product, device/xiaomi/msm8974-common/cancro_common.mk)
-
+$(call inherit-product, vendor/xiaomi/cancro/cancro-vendor.mk)
+DEVICE_PACKAGE_OVERLAYS += device/xiaomi/cancro/overlay
 PRODUCT_DEVICE := cancro
 PRODUCT_NAME := cancro
 PRODUCT_MODEL := MI 3W
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    audio.offload.pcm.enable=false
+    audio.offload.pcm.enable=true
 
 PRODUCT_COPY_FILES += \
     device/xiaomi/cancro/etc/bl_lut.txt:system/etc/bl_lut.txt \
     device/xiaomi/cancro/etc/calib.cfg:system/etc/calib.cfg
+
+# Wifi 
+PRODUCT_COPY_FILES += \
+    device/xiaomi/cancro/etc/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
+    device/xiaomi/cancro/etc/wifi/WCNSS_qcom_wlan_nv_x4.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv_x4.bin \
+    device/xiaomi/cancro/etc/wifi/WCNSS_qcom_wlan_nv_x4lte.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv_x4lte.bin
+
+# Audio
+PRODUCT_COPY_FILES += \
+    device/xiaomi/cancro/etc/mixer_paths_3_1.xml:system/etc/mixer_paths_3_1.xml \
+    device/xiaomi/cancro/etc/mixer_paths_3_1_forte.xml:system/etc/mixer_paths_3_1_forte.xml \
+    device/xiaomi/cancro/etc/mixer_paths_3_2.xml:system/etc/mixer_paths_3_2.xml \
+    device/xiaomi/cancro/etc/mixer_paths_3_2_forte.xml:system/etc/mixer_paths_3_2_forte.xml \
+    device/xiaomi/cancro/etc/mixer_paths_4_x.xml:system/etc/mixer_paths_4_x.xml \
+    device/xiaomi/cancro/etc/mixer_paths_4_x_forte.xml:system/etc/mixer_paths_4_x_forte.xml \
+    device/xiaomi/cancro/etc/mixer_paths_auxpcm_3_1.xml:system/etc/mixer_paths_auxpcm_3_1.xml \
+    device/xiaomi/cancro/etc/mixer_paths_auxpcm_3_2.xml:system/etc/mixer_paths_auxpcm_3_2.xml \
+    device/xiaomi/cancro/etc/mixer_paths_auxpcm_4_x.xml:system/etc/mixer_paths_auxpcm_4_x.xml \
+    device/xiaomi/cancro/etc/acdbdata/MTP/X3/MTP_X3_Bluetooth_cal.acdb:system/etc/acdbdata/MTP/X3/MTP_X3_Bluetooth_cal.acdb \
+    device/xiaomi/cancro/etc/acdbdata/MTP/X3/MTP_X3_General_cal.acdb:system/etc/acdbdata/MTP/X3/MTP_X3_General_cal.acdb \
+    device/xiaomi/cancro/etc/acdbdata/MTP/X3/MTP_X3_Global_cal.acdb:system/etc/acdbdata/MTP/X3/MTP_X3_Global_cal.acdb \
+    device/xiaomi/cancro/etc/acdbdata/MTP/X3/MTP_X3_Handset_cal.acdb:system/etc/acdbdata/MTP/X3/MTP_X3_Handset_cal.acdb \
+    device/xiaomi/cancro/etc/acdbdata/MTP/X3/MTP_X3_Hdmi_cal.acdb:system/etc/acdbdata/MTP/X3/MTP_X3_Hdmi_cal.acdb \
+    device/xiaomi/cancro/etc/acdbdata/MTP/X3/MTP_X3_Headset_cal.acdb:system/etc/acdbdata/MTP/X3/MTP_X3_Headset_cal.acdb \
+    device/xiaomi/cancro/etc/acdbdata/MTP/X3/MTP_X3_Speaker_cal.acdb:system/etc/acdbdata/MTP/X3/MTP_X3_Speaker_cal.acdb \
+    device/xiaomi/cancro/etc/acdbdata/MTP/X4/MTP_X4_Bluetooth_cal.acdb:system/etc/acdbdata/MTP/X4/MTP_X4_Bluetooth_cal.acdb \
+    device/xiaomi/cancro/etc/acdbdata/MTP/X4/MTP_X4_General_cal.acdb:system/etc/acdbdata/MTP/X4/MTP_X4_General_cal.acdb \
+    device/xiaomi/cancro/etc/acdbdata/MTP/X4/MTP_X4_Global_cal.acdb:system/etc/acdbdata/MTP/X4/MTP_X4_Global_cal.acdb \
+    device/xiaomi/cancro/etc/acdbdata/MTP/X4/MTP_X4_Handset_cal.acdb:system/etc/acdbdata/MTP/X4/MTP_X4_Handset_cal.acdb \
+    device/xiaomi/cancro/etc/acdbdata/MTP/X4/MTP_X4_Hdmi_cal.acdb:system/etc/acdbdata/MTP/X4/MTP_X4_Hdmi_cal.acdb \
+    device/xiaomi/cancro/etc/acdbdata/MTP/X4/MTP_X4_Headset_cal.acdb:system/etc/acdbdata/MTP/X4/MTP_X4_Headset_cal.acdb \
+    device/xiaomi/cancro/etc/acdbdata/MTP/X4/MTP_X4_Speaker_cal.acdb:system/etc/acdbdata/MTP/X4/MTP_X4_Speaker_cal.acdb
 
 # NFC
 TARGET_USES_OS_NFC := true
@@ -45,7 +78,7 @@ PRODUCT_PACKAGES += \
 ifeq ($(TARGET_BUILD_VARIANT),user)
     NFCEE_ACCESS_PATH := $(LOCAL_PATH)/nfc/nfcee_access.xml
 else
-    NFCEE_ACCESS_PATH := $(LOCAL_PATH)/nfc/nfcee_access_debug.xml
+    NFCEE_ACCESS_PATH := $(LOCAL_PATH)/nfc/nfcee_access.xml
 endif
 
 PRODUCT_COPY_FILES += \
@@ -59,12 +92,5 @@ PRODUCT_COPY_FILES += \
 
 # fmradio support
 PRODUCT_PACKAGES += \
-    qcom.fmradio \
-    libqcomfm_jni \
-    FM2 \
-    FMRecord
-
-PRODUCT_BOOT_JARS += qcom.fmradio
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.fm.transmitter=false
+    libfmjni \
+    FMRadio
